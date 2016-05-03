@@ -10,16 +10,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>查找用户信息</title>
+<title>欢迎</title>
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-	<center>
-		<form action="findRole" method="post">
-			请输入角色姓名:<input type="text" name="name">
-			 <input type="submit" value="确定">  
-		</form>
-	</center>
+	<a href="<%=basePath%>/findRole">查询角色</a>
 </body>
 </html>

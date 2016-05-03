@@ -17,7 +17,7 @@ public class RoleController {
     @Resource 
     private RoleService roleService;
     
-	@RequestMapping(value="/findRole",method = RequestMethod.POST)
+	@RequestMapping(value="/findRole")
 	public String getRole(HttpServletRequest request){	
 	    String name = request.getParameter("name");
 	    Role role = roleService.findRoleByName(name);
