@@ -23,48 +23,48 @@
 		background: #FFFFFF;
 	}
 	</style>
-	
-	<script type="text/javascript">
-
-        //获取发布模块类型
-        function getRoles() {
-            $.ajax({
-                type: "POST",
-                data: $("#getRoleForm").serialize(),
-                success: function(json) {
-                	alert(11);
-                    $.each(json, function(i, n) {
-                        var tbBody = "";
-                        var trColor;
-                        if (i % 2 == 0) {
-                            trColor = "even";
-                        }
-                        else {
-                            trColor = "odd";
-                        }
-                        tbBody += "<tr class='" + trColor + "'><td>" + n.name + "</td></tr>";
-                        $("#myTb").append(tbBody);
-                    });
-                },
-                error: function(json) {
-                    alert("加载失败");
-                }
-            });
-            
-            return false;
+    
+<script type="text/javascript">
+  $(function () {
+    // Handle form submit ...
+    $("#btn").bind("click", function (event) {
+      var form = $("#getRoleForm");
+      $.ajax({
+        url: form.attr('action'),
+        type: "POST",
+        data: form.serialize(),
+        success: function(data) {
+        	  $.each(data, function(i, n) {
+                  var tbBody = "";
+                  var trColor;
+                  if (i % 2 == 0) {
+                      trColor = "even";
+                  }
+                  else {
+                      trColor = "odd";
+                  }
+                  tbBody += "<tr class='" + trColor + "'><td>" + n + "</td></tr>";
+                  $("#myTb").append(tbBody);
+              });
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+          alert("Error '" + jqXhr.status + "' (textStatus: '" + textStatus + "', errorThrown: '" + errorThrown + "')");
         }
-
-    </script>
+      });
+    });
+  });
+</script>
 	
 
 </head>
 <body>
 	<center>
-		<form id="getRoleForm" action="getRole" onsubmit="getRoles()">
+		<form id="getRoleForm" action="getRole">
 			请输入角色姓名:<input type="text" name="name">
-			<input type="submit" value="确定">  
+			<input type="button" id="btn" value="确定">  
 		</form>
-		
+		 <div id="ProgressDialog">
+    	</div>
 		 <div id="divTb">
 	        <table id="myTb" style=" width:100%">
 	        </table>

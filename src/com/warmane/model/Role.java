@@ -10,8 +10,7 @@ public class Role {
     private Integer id;
 	private Integer relateRoleId;
 	private String roleName;
-	@Autowired
-	List<Role> alts;
+	private List<Role> alts;
 
 	
 	public Integer getId() {
@@ -37,4 +36,12 @@ public class Role {
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
+
+	public List<Role> getAlts() {
+		return alts;
+	}
+
+	public void setAlts(List<Role> alts) {
+		this.alts = alts;
+	}
 }
