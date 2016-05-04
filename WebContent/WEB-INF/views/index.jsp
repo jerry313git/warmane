@@ -16,7 +16,7 @@
 </head>
 <body>
 	<center>
-		<a href="<%=basePath%>/findRole">查询角色</a>
+		<a href="<%=basePath%>toFindRole">查询角色</a>
 	</center>
 </body>
 </html>
