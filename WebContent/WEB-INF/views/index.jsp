@@ -15,6 +15,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-	<a href="<%=basePath%>/findRole">查询角色</a>
+	<center>
+		<a href="<%=basePath%>toFindRole">查询角色</a>
+	</center>
 </body>
 </html>
