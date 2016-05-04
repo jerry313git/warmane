@@ -16,10 +16,7 @@
 </head>
 <body>
 	<center>
-		<form action="findRole" method="post">
-			请输入角色姓名:<input type="text" name="name">
-			 <input type="submit" value="确定">  
-		</form>
+		<a href="<%=basePath%>/findRole">查询角色</a>
 	</center>
 </body>
 </html>

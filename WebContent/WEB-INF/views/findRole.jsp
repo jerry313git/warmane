@@ -10,10 +10,10 @@
 </head>
 <body>
 	<center>
-		通过controller访问<br/>
-		欢迎<br/>
-		<%String name = request.getParameter("name");%>
-		<%=roleDao.findRoleByName(name)%><br /> 
+		<form action="findRole" method="post">
+			请输入角色姓名:<input type="text" name="name">
+			 <input type="submit" value="确定">  
+		</form>
 
 	</center>
 </body>
