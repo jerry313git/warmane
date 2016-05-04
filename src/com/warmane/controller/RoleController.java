@@ -17,6 +17,11 @@ public class RoleController {
     @Resource 
     private RoleService roleService;
     
+    @RequestMapping(value="/toFindRole")
+	public String toFindRole(){	
+		return "findRole";
+	}
+    
 	@RequestMapping(value="/findRole")
 	public String getRole(HttpServletRequest request){	
 	    String name = request.getParameter("name");
