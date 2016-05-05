@@ -34,7 +34,9 @@
         type: "POST",
         data: form.serialize(),
         success: function(data) {
-        	  $.each(data, function(i, n) {
+        	  obj= $.parseJSON(data);
+        	  $.each(obj, function(i, n) {
+        		  
                   var tbBody = "";
                   var trColor;
                   if (i % 2 == 0) {
@@ -45,6 +47,7 @@
                   }
                   tbBody += "<tr class='" + trColor + "'><td>" + n + "</td></tr>";
                   $("#myTb").append(tbBody);
+                 //alert(tbBody);
               });
         },
         error: function (jqXhr, textStatus, errorThrown) {
